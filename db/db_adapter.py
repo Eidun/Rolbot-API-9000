@@ -76,3 +76,13 @@ class DBAdapter():
         conn.commit()
         cursor.close()
         conn.close()
+
+    def reset_table(self):
+        conn = self.__create_connection()
+        cursor = conn.cursor()
+
+        cursor.execute('DELETE FROM ROLL')
+
+        conn.commit()
+        cursor.close()
+        conn.close()

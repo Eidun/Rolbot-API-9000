@@ -10,3 +10,8 @@ class RollController(Resource):
         roll_service = RollService()
         result, repeats = roll_service.roll(request.json)
         return {'roll': {'result': result, 'repeats': repeats}}, 200
+
+    def delete(self):
+        roll_service = RollService()
+        roll_service.reset_table()
+        return {'borrado': 'Concluido'}

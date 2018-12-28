@@ -19,3 +19,6 @@ class RollService:
             result, repeats = self.db.get_roll(data.get('author'))
         self.db.see_roll(data.get('author'))
         return json.loads(result), repeats
+
+    def reset_table(self):
+        self.db.reset_table()
